@@ -1,0 +1,134 @@
+[
+    {
+        "pk":1,
+        "model": "products.product",
+        "fields":{
+            "sku": "2020121201",
+            "name": "Bee Mine",
+            "description": "The Bee Mine is a fun handwritten and Decorative font. It has a great readability and will add a playful touch to your designs. It can easily be matched to an incredibly large set of projects, so add it to your creative ideas and notice how it makes them stand out!",
+            "price": 9.99,
+            "image_url": "https://i.fbcd.co/products/resized/resized-720-480/a09bbd7d0c351908775143a380a944d8c94e7692631427e66267682d64704329.jpg",
+            "image": "beemine.jpg"
+        }
+    },
+    {
+        "pk":2,
+        "model": "products.product",
+        "fields":{
+            "sku": "2020121202",
+            "name": "Cinnamon Sticks",
+            "description": "Cinnamon Sticks is a playful, handwritten font designed for display use.Perfect for greeting cards, logos, magazines and more! ",
+            "price": 9.99,
+            "image_url": "https://i.fbcd.co/products/resized/resized-720-480/aa1e0b407e18337b26b2c9356d05ef56b0633a05c3b07443f315d372e0bd3e83.jpg",
+            "image": "cinnamon-sticks.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields":{
+            "sku": "2020121203",
+            "name": "Joyfully",
+            "description": "Joyfully, Cute & Playful Typeface, with a calligraphy style, beautiful on invitation like greeting cards, branding materials, business cards, quotes, posters, and more!",
+            "price": 9.99,
+            "image_url": "https://i.fbcd.co/products/resized/resized-720-480/a48e6ed5a2c9c541e85bb29c6b8a9ac0cfa86a455fc81e746c8e50802cd6ce8c.jpg",
+            "image": "joyfully.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields":{
+            "sku": "2020121204",
+            "name": "Leafs",
+            "description": "leafs Script Fonts are made for various vector designs, printing such as digital wedding invitations, blogs, online shops, social media, while printing can be used in the field of product clothing, accessories, bags, pins, logos, business cards, watermarks and many others ...",
+            "price": 9.99,
+            "image_url": "https://i.fbcd.co/products/resized/resized-720-480/ae5aac33ecf8be648f65ceab950a44b17593d6f1b9c51a97b018a0d01b995f2c.jpg",
+            "image": "leafs.jpg"
+        }
+    },
+     {
+        "pk": 5,
+        "model": "products.product",
+        "fields":{
+            "sku": "2020121205",
+            "name": "Love Fairy",
+            "description": "Love Fairy is a modern display font. Love Fairy is perfectly suited to signature, wedding, social media, stationery, logo, typography quotes, magazine or book cover, website header, clothing, branding, packaging design and more. ",
+            "price": 9.99,
+            "image_url": "https://i.fbcd.co/products/resized/resized-720-480/90fb345da675b1da16a6769e5295f9eb8ab1d23438ca10b41bf617bc746e5c4b.jpg",
+            "image": "lovefairy.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields":{
+            "sku": "2020121206",
+            "name": "Lovely Barthy",
+            "description": "LovelyBarthy - a new fresh handmade calligraphy font. Very suitable for greeting cards, branding materials, business cards, quotes, posters, and more!This font are perfect for wedding postcard. Or you can create perfect and unique design of your logo, blog, stationery, marketing, magazines and more :)",
+            "price": 9.99,
+            "image_url": "https://i.fbcd.co/products/resized/resized-720-480/907f445e3970d87e3bf67f911a1a1994abdc87aed1643b5253aaa9ac4674012f.jpg",
+            "image": "lovelybarthy.jpg"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields":{
+            "sku": "2020121207",
+            "name": "Margret River",
+            "description": "Margaret River is a cute, funny handwritten font. Very cool if use for logos, headlines, brandings, etc.",
+            "price": 9.99,
+            "image_url": "https://i.fbcd.co/products/resized/resized-720-480/3787d2b9406aa3ad54dcdcfc9ad46a00254b13d13af9179fd4680f30f6f9eb24.jpg",
+            "image": "margretriver.jpg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields":{
+            "sku": "2020121208",
+            "name": "Nafeeza Typeface",
+            "description": "Nafeeza Typeface is a modern script font and it can be used such as letterhead, signature, logos, wedding invitation, poster, headings, signage, lable, news, posters, t-shirt, badges etc.",
+            "price": 9.99,
+            "image_url": "https://i.fbcd.co/products/resized/resized-720-480/d4dd27ba4106c93091ff8e735c833eee6255fc6ca6a228df77a5d70c403e0b23.jpg",
+            "image": "nafeeza.jpg"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields":{
+            "sku": "2020121209",
+            "name": "Rosseville",
+            "description": "Rossevillecan make your text stand out - perfect for logos, printed quotes, invitations, cards, product packaging, headers and whatever your imagination holds",
+            "price": 9.99,
+            "image_url": "https://i.fbcd.co/products/resized/resized-720-480/cf65ce45c1a9349763ebbcb29acdab58985b4074f01165ec803a3ea50b20beb7.jpg",
+            "image": "rosseville.jpg"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields":{
+            "sku": "2020121210",
+            "name": "Russell",
+            "description": "a fun and bouncy script font which is perception and wisely designed to create your text looks outstanding. A dynamic script style typeface will craft a well-ordered appearance for many different projects such as quotes, blog header, poster, wedding, branding,logo, fashion, apparel, letter, invitation, stationery, etc.",
+            "price": 9.99,
+            "image_url": "https://i.fbcd.co/products/resized/resized-720-480/4d0b323b120559df8fa8130d47aa13b38c04f9c54bcb8e543c6f8f78e6efd394.jpg",
+            "image": "russell.jpg"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields":{
+            "sku": "2020121211",
+            "name": "Timberly",
+            "description": "Timberly is a strong and bold script that celebrates all things Winter! Get inspired by its whimsical lettering.",
+            "price": 9.99,
+            "image_url": "https://i.fbcd.co/products/resized/resized-720-480/5148dab87d94e248f79dbea6d2f7d435a1b2e6f1f355d92f2a99807e038daf48.jpg",
+            "image": "timberly.jpg"
+        }
+    }
+]
