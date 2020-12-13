@@ -22,3 +22,7 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def personalise(request):
+    return render(request, 'products/personalise.html')
