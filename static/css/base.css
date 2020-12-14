@@ -10,9 +10,9 @@ body {
 font-family: 'Dancing Script', cursive;
 }
 
-.bg-banner {
-    background-image: url(/media/homepage_background.jpg);
-    background-size: cover;
+.jumbotron {
+  background-image: url("/media/jumbotron-bg.jpg");
+  background-size: cover;
 }
 
 
@@ -63,6 +63,9 @@ font-family: 'Dancing Script', cursive;
     border: 1px solid black !important;
 }
 
+.bg-black {
+    background: #000 !important;
+}
 
 /* -------------------------------- Media Queries */
 

@@ -24,9 +24,7 @@
 
         <div class="row">
             <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Personalisation details</h2>
-                <hr>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
             </div>
         </div>
 
@@ -36,12 +34,12 @@
     <label for="select-bg">Background</label>
     <select class="form-control" id="select-bg">
       <option>standard as sample</option>
-      <option>minimal</option>
-      <option>more elements required</option>
+      <option>less elements</option>
+      <option>more elements</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="select-text-color"></label>
+    <label for="select-text-color">Text Color</label>
     <select class="form-control" id="select-text-color">
       <option>standard as sample</option>
       <option>golden tone</option>
@@ -56,7 +54,7 @@
 </small>
   </div>
   <div class="form-group">
-    <label for="more-details">More details</label>
+    <label for="more-details">Extra requirements</label>
     <textarea class="form-control" id="more-details" rows="3"></textarea>
   </div>
 </form>
