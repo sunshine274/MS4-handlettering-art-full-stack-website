@@ -13,10 +13,15 @@ class Personalise(models.Model):
         ('golden', 'golden tone'),
         ('silver', 'silverish tone'),
     )
+    BACKGROUND_COST = {
+        'standard': 0,
+        'simplify': 0,
+        'elaborate': 5,
+    }
     background = models.CharField(max_length=10, choices=background_choices, default='standard',)
     text_color = models.CharField(max_length=10, choices=text_color_choices, default='standard',)
-    text_content = models.TextField(max_length=20)
-    extra_requirements = models.TextField(max_length=255)
+    text_content = models.TextField(max_length=20, null=False, blank=False, default='add your text',)
+    extra_requirements = models.TextField(max_length=255, null=False, blank=True, default='none',)
 
     def __str__(self):
         return self.product_number

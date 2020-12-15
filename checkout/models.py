@@ -60,6 +60,11 @@ class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    quantity = models.IntegerField(default=1)
+    background = models.CharField(max_length=10, default='standard',)
+    text_color = models.CharField(max_length=10, default='standard',)
+    text_content = models.TextField(max_length=20, null=False, blank=False, default='add your text',)
+    extra_requirements = models.TextField(max_length=255, null=False, blank=True, default='none',)
     
     def save(self, *args, **kwargs):
         """
