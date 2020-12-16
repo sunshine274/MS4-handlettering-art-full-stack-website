@@ -17,24 +17,18 @@ def add_to_bag(request, item_id):
     extra_requirements = request.POST.get('extra_requirements')
     text_color = request.POST.get('text_color')
     text_content = request.POST.get('text_content')
+    bag = request.session.get('bag', [])
     default_values = {
+        'product': product.id,
         'quantity': quantity,
-        'background': 'standard',
-        'extra_requirements': '',
-        'text_color': 'standard',
-        'text_content': '',
+        'background': background,
+        'extra_requirements': extra_requirements,
+        'text_color': text_color,
+        'text_content': text_content,
+        'id': len(bag) + 1,
         }
-    bag = request.session.get('bag', {})
-
-    if item_id in bag:
-        bag[item_id]['quantity'] += quantity
-    else:
-        bag[item_id] = default_values
+    bag.append(default_values)
     messages.success(request, f'Added {product.name} to your bag')
-    bag[item_id]['background'] = background
-    bag[item_id]['extra_requirements'] = extra_requirements
-    bag[item_id]['text_color'] = text_color
-    bag[item_id]['text_content'] = text_content
 
     request.session['bag'] = bag
     print(request.session['bag'])
@@ -45,12 +39,21 @@ def remove_from_bag(request, item_id):
     """Remove the item from the shopping bag"""
 
     try:
-        product = get_object_or_404(Product, pk=item_id)
-        bag = request.session.get('bag', {})
-        bag.pop(item_id)
-
-        request.session['bag'] = bag
-        messages.success(request, f'Removed {product.name} from your bag')
+        bag = request.session.get('bag', [])
+        print(bag)
+        print(item_id)
+        removed_item = None
+        new_bag = []
+        for item in bag:
+            if item['id'] == int(item_id):
+                removed_item = item
+                continue
+            new_bag.append(item)
+        print(new_bag)
+        request.session['bag'] = new_bag
+        if removed_item:
+            product = Product.objects.get(id=removed_item['product'])
+            messages.success(request, f'Removed {product.name} from your bag')
         return HttpResponse(status=200)
 
     except Exception as e:
