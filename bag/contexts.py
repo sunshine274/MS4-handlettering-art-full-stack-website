@@ -13,7 +13,7 @@ def bag_contents(request):
 
     for item_id, values in bag.items():
         product = get_object_or_404(Product, pk=item_id)
-        price = product.price 
+        price = product.price
         total += values['quantity'] * product.price
         if values['extra_requirements']:
             price += 5
