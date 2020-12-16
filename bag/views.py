@@ -40,16 +40,15 @@ def remove_from_bag(request, item_id):
 
     try:
         bag = request.session.get('bag', [])
-        print(bag)
-        print(item_id)
         removed_item = None
         new_bag = []
+
         for item in bag:
             if item['id'] == int(item_id):
                 removed_item = item
                 continue
             new_bag.append(item)
-        print(new_bag)
+
         request.session['bag'] = new_bag
         if removed_item:
             product = Product.objects.get(id=removed_item['product'])
