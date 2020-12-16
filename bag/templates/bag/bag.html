@@ -74,8 +74,26 @@
                                         <p class="my-0">{{ item.quantity }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">£{{ item.product.price }}</p>
+                                        <p class="my-0">£{{ item.price }}</p>
                                     </td>
+                              </tr>
+                              <tr>
+                                  <td class="p-3 w-25">
+                                      <label for="">Background</label>
+                                     <p class="my-0">{{ item.background }}</p>
+                                </td>
+                                <td class="p-3 w-25">
+                                    <label for="">Text Color</label>
+                                     <p class="my-0">{{ item.text_color }}</p>
+                                </td>
+                                <td class="p-3 w-25">
+                                    <label for="">Text Content</label>
+                                     <p class="my-0">{{ item.text_content }}</p>
+                                </td>
+                                <td class="p-3 w-25">
+                                    <label for="">Extra Requirements</label>
+                                     <p class="my-0">{{ item.extra_requirements }}</p>
+                                </td>
                               </tr>
                             {% endfor %}
                             <tr>

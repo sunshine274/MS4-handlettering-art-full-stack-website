@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
+from personalise.models import Personalise
 
 
 def bag_contents(request):
@@ -10,20 +11,36 @@ def bag_contents(request):
     product_count = 0
     bag = request.session.get('bag', {})
 
-    for item_id, quantity in bag.items():
+    for item_id, values in bag.items():
         product = get_object_or_404(Product, pk=item_id)
-        total += quantity * product.price
-        product_count += quantity
+        price = product.price 
+        total += values['quantity'] * product.price
+        if values['extra_requirements']:
+            price += 5
+            total += 5 
+
+        total += Personalise.EXTRA_COST[values['background']]
+        total += Personalise.EXTRA_COST[values['text_color']]
+
+        price += Personalise.EXTRA_COST[values['background']]
+        price += Personalise.EXTRA_COST[values['text_color']]
+
+        product_count += values['quantity']
         bag_items.append({
+            'price': price,
             'item_id': item_id,
-            'quantity': quantity,
+            'quantity': values['quantity'],
             'product': product,
+            'background': values['background'],
+            'extra_requirements': values['extra_requirements'],
+            'text_color': values['text_color'],
+            'text_content': values['text_content'],
         })
 
     if total < settings.BUNDLE_DISCOUNT_THRESHOLD:
         grand_total = total
     else:
-        grand_total = total * 0.8
+        grand_total = float(total) * 0.8
 
     context = {
         'bag_items': bag_items,
@@ -31,6 +48,7 @@ def bag_contents(request):
         'product_count': product_count,
         'bundle_discount_threshold': settings.BUNDLE_DISCOUNT_THRESHOLD,
         'grand_total': grand_total,
+        'discount': float(total) - float(grand_total),
     }
 
     return context

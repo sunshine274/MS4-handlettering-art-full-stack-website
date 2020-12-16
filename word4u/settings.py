@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'personalise',
     'bag',
     'checkout',
+
+    # other
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -60,6 +63,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'word4u.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {

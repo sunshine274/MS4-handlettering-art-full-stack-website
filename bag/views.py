@@ -13,13 +13,28 @@ def add_to_bag(request, item_id):
     product = Product.objects.get(pk=item_id)
     quantity = 1
     redirect_url = request.POST.get('redirect_url')
+    background = request.POST.get('background')
+    extra_requirements = request.POST.get('extra_requirements')
+    text_color = request.POST.get('text_color')
+    text_content = request.POST.get('text_content')
+    default_values = {
+        'quantity': quantity,
+        'background': 'standard',
+        'extra_requirements': '',
+        'text_color': 'standard',
+        'text_content': '',
+        }
     bag = request.session.get('bag', {})
 
-    if item_id in list(bag.keys()):
-        bag[item_id] += quantity
+    if item_id in bag:
+        bag[item_id]['quantity'] += quantity
     else:
-        bag[item_id] = quantity
+        bag[item_id] = default_values
         messages.success(request, f'Added {product.name} to your bag')
+    bag[item_id]['background'] = background
+    bag[item_id]['extra_requirements'] = extra_requirements
+    bag[item_id]['text_color'] = text_color
+    bag[item_id]['text_content'] = text_content
 
     request.session['bag'] = bag
     print(request.session['bag'])
