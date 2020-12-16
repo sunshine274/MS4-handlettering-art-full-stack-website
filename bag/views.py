@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from django.contrib import messages
 
 from products.models import Product
@@ -10,7 +10,7 @@ def view_bag(request):
 
 def add_to_bag(request, item_id):
 
-    product = Product.objects.get(pk=item_id)
+    product = get_object_or_404(Product, pk=item_id)
     quantity = 1
     redirect_url = request.POST.get('redirect_url')
     background = request.POST.get('background')
@@ -30,7 +30,7 @@ def add_to_bag(request, item_id):
         bag[item_id]['quantity'] += quantity
     else:
         bag[item_id] = default_values
-        messages.success(request, f'Added {product.name} to your bag')
+    messages.success(request, f'Added {product.name} to your bag')
     bag[item_id]['background'] = background
     bag[item_id]['extra_requirements'] = extra_requirements
     bag[item_id]['text_color'] = text_color
@@ -45,19 +45,14 @@ def remove_from_bag(request, item_id):
     """Remove the item from the shopping bag"""
 
     try:
-        if 'product_size' in request.POST:
-            size = request.POST['product_size']
+        product = get_object_or_404(Product, pk=item_id)
         bag = request.session.get('bag', {})
-
-        if size:
-            del bag[item_id]['items_by_size'][size]
-            if not bag[item_id]['items_by_size']:
-                bag.pop(item_id)
-        else:
-            bag.pop(item_id)
+        bag.pop(item_id)
 
         request.session['bag'] = bag
+        messages.success(request, f'Removed {product.name} from your bag')
         return HttpResponse(status=200)
 
     except Exception as e:
+        messages.error(request, f'Error removing product {e}')
         return HttpResponse(status=500)
