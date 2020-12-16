@@ -22,6 +22,7 @@ class Personalise(models.Model):
     text_color = models.CharField(max_length=10, choices=text_color_choices, default='standard',)
     text_content = models.TextField(max_length=20, null=False, blank=False, default='add your text',)
     extra_requirements = models.TextField(max_length=255, null=False, blank=True, default='none',)
+    cost_extra = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
         return self.product_number
