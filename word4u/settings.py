@@ -19,6 +19,7 @@ DATABASE_PASSWORD = os.environ.get('DATABASE_PASSWORD') or '123456'
 DATABASE_NAME = os.environ.get('DATABASE_NAME') or 'BASE_DIR' / 'db.sqlite3'
 DATABASE_HOST = os.environ.get('DATABASE_HOST')
 
+
 # Stripe
 BUNDLE_DISCOUNT_THRESHOLD = 19.99
 STRIPE_CURRENCY = 'gbp'
