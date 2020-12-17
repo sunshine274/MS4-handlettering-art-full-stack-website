@@ -13,6 +13,19 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 
+DEPLOYMENT = os.environ.get('DEPLOYMENT') or 'local'
+DATABASE_USER = os.environ.get('DATABASE_USER') or 'user'
+DATABASE_PASSWORD = os.environ.get('DATABASE_PASSWORD') or '123456'
+DATABASE_NAME = os.environ.get('DATABASE_NAME') or 'BASE_DIR' / 'db.sqlite3'
+DATABASE_HOST = os.environ.get('DATABASE_HOST')
+
+# Stripe
+BUNDLE_DISCOUNT_THRESHOLD = 19.99
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -119,11 +132,18 @@ WSGI_APPLICATION = 'word4u.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+ENGINE = 'django.db.backends.sqlite3'
+
+if DEPLOYMENT == 'heroku':
+    ENGINE = 'django.db.backends.postgresql'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': ENGINE,
+        'NAME': DATABASE_NAME,
+        'USER': DATABASE_USER,
+        'PASSWORD': DATABASE_PASSWORD,
+        'HOST': DATABASE_HOST,
     }
 }
 
@@ -170,9 +190,4 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Stripe
-BUNDLE_DISCOUNT_THRESHOLD = 19.99
-STRIPE_CURRENCY = 'gbp'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
-STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+
