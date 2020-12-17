@@ -69,13 +69,15 @@ This is my full-stack e-commerce website built while studying Django under extre
 ## User Stories
 
 ### Site User Stories
-As a site visitor of WORD4U
+As a site visitor of WORD4U, I expect/need/want to:
 - have a personal account to view my profile
 - access my personal account info
 - recover access to my account
 - verify that my account registration was successful
-- view my order history and order confirmations
-- save my payment info 
+### Shopper Stories
+As a shopper of WORD4U, I expect/need/want to:
+
+
 
 
 
