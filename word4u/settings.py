@@ -37,9 +37,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'd*mwv+8mla!+u^kze0!o3l#qlfjd(%z&!-=svuhzqwy!m8)8rw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = DEPLOYMENT == 'local'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ms4-lettering-design-e-shop.herokuapp.com', 
+                '8000-ed10b46b-d3de-49a6-a1c9-14a86b9f1415.ws-eu03.gitpod.io']
 
 
 # Application definition
