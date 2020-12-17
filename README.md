@@ -2,18 +2,21 @@
 
 [View the live project here.](https://net)
 
-This is the full-stack e-commerce website build under extremely tight deadline and 
+This is my full-stack e-commerce website built while studying Django under extremely tight deadline and 
 
 <h2 align="center"><img src=""></h2>
 
 ## Table of Contents
 1. [UX](#ux)
     - [Goals](#goals)
-        - [Visitor Goals](#visitor-goals)
-        - [Seller Goals](#seller-goals)
+        - [Site user Goals](#site-user-goals)
+        - [Shopper Goals](#shopper-goals)
+        - [Business Goals](#business-goals)
     - [User Stories](#user-stories)
-        - [Visitor Stories](#visitor-stories)
-        - [Seller Stories](#business-stories)
+        - [Site user Stories](#site-user-stories)
+        - [Shopper Stories](#shopper-stories)
+        - [Business Stories](#business-stories)
+    - [Design Choices](#design-choices)
     - [Wireframes](#wireframes)
 
 2. [Features](#features)
@@ -37,10 +40,42 @@ This is the full-stack e-commerce website build under extremely tight deadline a
 
 
 
-## User Experience (UX)
+# User Experience (UX)
+## Goals
+### Site user Goals
+- easily register for an account
+- easily login or logout
+- easily recover my password in case I forget it
+- receive and email confirmation after registering
+- have a personalised user profile
+### Shopper Goals
+- View a list of products
+- View an individual product details
+- personalise the product
+- easily view the total of my purchases at any time
+- easily select and submit the personalisation details
+- view items in the shopping bag
+- easily enter payment info
+- feel my personal and payment info is safe and secure
+- view an order confirmation after checkout
+- receive and email confirmation after checkout
+### Business Goals
+- Add a product
+- edit/update a product details
+- delete a product
+- offer discount for bundle purchases
+- Make sure the shoppers have smooth shopping Experience
 
+## User Stories
 
-
+### Site User Stories
+As a site visitor of WORD4U
+- have a personal account to view my profile
+- access my personal account info
+- recover access to my account
+- verify that my account registration was successful
+- view my order history and order confirmations
+- save my payment info 
 
 
 
