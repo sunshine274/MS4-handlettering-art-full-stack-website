@@ -50,7 +50,7 @@
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                         </div>
                         <div class="col-3 text-right">
-                            <p class="my-0 small text-muted">£{{ item.price }}</p>
+                            <p class="my-0 small text-muted">£{{ item.sub_total }}</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -77,6 +77,11 @@
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                         {{ order_form.phone_number | as_crispy_field }}
+                        {{ order_form.street_address1 | as_crispy_field }}
+                        {{ order_form.street_address2 | as_crispy_field }}
+                        {{ order_form.town_or_city | as_crispy_field }}
+                        {{ order_form.county | as_crispy_field }}
+                        {{ order_form.postcode | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
                     </fieldset>
                     <fieldset class="rounded px-3 mb-5">

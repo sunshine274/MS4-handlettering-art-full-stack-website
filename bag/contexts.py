@@ -14,21 +14,21 @@ def bag_contents(request):
     for values in bag:
         item_id = values['product']
         product = get_object_or_404(Product, pk=item_id)
-        price = product.price
+        sub_total = product.price
         total += values['quantity'] * product.price
         if values['extra_requirements']:
-            price += 5
+            sub_total += 5
             total += 5
 
         total += Personalise.EXTRA_COST[values['background']]
         total += Personalise.EXTRA_COST[values['text_color']]
 
-        price += Personalise.EXTRA_COST[values['background']]
-        price += Personalise.EXTRA_COST[values['text_color']]
+        sub_total += Personalise.EXTRA_COST[values['background']]
+        sub_total += Personalise.EXTRA_COST[values['text_color']]
 
         product_count += values['quantity']
         bag_items.append({
-            'price': price,
+            'sub_total': sub_total,
             'item_id': item_id,
             'quantity': values['quantity'],
             'product': product,

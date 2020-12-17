@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from django.contrib import messages
 
 from products.models import Product
+from personalise.models import Personalise
 
 
 def view_bag(request):
@@ -11,6 +12,8 @@ def view_bag(request):
 def add_to_bag(request, item_id):
 
     product = get_object_or_404(Product, pk=item_id)
+    sub_total = product.price
+
     quantity = 1
     redirect_url = request.POST.get('redirect_url')
     background = request.POST.get('background')
@@ -18,8 +21,14 @@ def add_to_bag(request, item_id):
     text_color = request.POST.get('text_color')
     text_content = request.POST.get('text_content')
     bag = request.session.get('bag', [])
+    if extra_requirements:
+        sub_total += 5
+
+    sub_total += Personalise.EXTRA_COST[background]
+    sub_total += Personalise.EXTRA_COST[text_color]
     default_values = {
         'product': product.id,
+        'sub_total': float(sub_total),
         'quantity': quantity,
         'background': background,
         'extra_requirements': extra_requirements,
