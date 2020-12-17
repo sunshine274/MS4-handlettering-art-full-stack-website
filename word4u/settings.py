@@ -13,10 +13,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 
+BASE_DIR = Path(__file__).resolve().parent.parent
 DEPLOYMENT = os.environ.get('DEPLOYMENT') or 'local'
 DATABASE_USER = os.environ.get('DATABASE_USER') or 'user'
 DATABASE_PASSWORD = os.environ.get('DATABASE_PASSWORD') or '123456'
-DATABASE_NAME = os.environ.get('DATABASE_NAME') or 'BASE_DIR' / 'db.sqlite3'
+DATABASE_NAME = os.environ.get('DATABASE_NAME') or str(BASE_DIR) + '/' 'db.sqlite3'
 DATABASE_HOST = os.environ.get('DATABASE_HOST')
 
 
@@ -28,7 +29,7 @@ STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -41,7 +42,8 @@ SECRET_KEY = 'd*mwv+8mla!+u^kze0!o3l#qlfjd(%z&!-=svuhzqwy!m8)8rw'
 DEBUG = DEPLOYMENT == 'local'
 
 ALLOWED_HOSTS = ['ms4-lettering-design-e-shop.herokuapp.com', 
-                '8000-ed10b46b-d3de-49a6-a1c9-14a86b9f1415.ws-eu03.gitpod.io']
+                '8000-ed10b46b-d3de-49a6-a1c9-14a86b9f1415.ws-eu03.gitpod.io',
+                'localhost']
 
 
 # Application definition
@@ -191,5 +193,3 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
