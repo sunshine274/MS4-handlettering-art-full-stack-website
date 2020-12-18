@@ -30,7 +30,7 @@ if 'USE_AWS' in os.environ:
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'd*mwv+8mla!+u^kze0!o3l#qlfjd(%z&!-=svuhzqwy!m8)8rw'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
