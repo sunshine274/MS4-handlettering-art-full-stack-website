@@ -47,9 +47,9 @@ class Order(models.Model):
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < settings.BUNDLE_DISCOUNT_THRESHOLD:
-            self.grand_total = self.order_total
+            self.grand_total = float(self.order_total)
         else:
-            self.grand_total = self.order_total * 0.8
+            self.grand_total = float(self.order_total) * 0.8
         self.save()
 
     def save(self, *args, **kwargs):
