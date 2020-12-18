@@ -80,6 +80,10 @@ font-family: 'Montserrat', sans-serif;
     background: #000 !important;
 }
 
+.bg-theme {
+    background: #69c2a9;
+}
+
 .btt-button {
     height: 42px;
     width: 42px;
@@ -228,6 +232,39 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
+}
+
+footer {
+  background-color: #9bbcb3;
+  color: #fafafa;
+  min-height: 80px;
+  margin: 0;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.socil-links {
+  padding-bottom: 15px;
+}
+
+.social-links li a i {
+  width: 40px;
+  height: 40px;
+  padding: 12px 0;
+  border-radius: 50%;
+  font-size: 30px;
+  line-height: 15px;
+  text-align: center;
+  color: #fafafa;
+  background: #7f8d89;
+  transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover {
+  background: #6db9d9;
 }
 
 /* fixed top navbar only on medium and up */

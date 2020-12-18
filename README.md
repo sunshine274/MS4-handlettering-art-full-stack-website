@@ -86,5 +86,8 @@ As a shopper of WORD4U, I expect/need/want to:
 
 
 
+There should be a contact page for cusomers/site visitors to contact the business.
+
+
 # Media
 - 
