@@ -12,25 +12,19 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-DEPLOYMENT = os.environ.get('DEPLOYMENT') or 'local'
-DATABASE_USER = os.environ.get('DATABASE_USER') or 'user'
-DATABASE_PASSWORD = os.environ.get('DATABASE_PASSWORD') or '123456'
-DATABASE_NAME = os.environ.get('DATABASE_NAME') or str(BASE_DIR) + '/' 'db.sqlite3'
-DATABASE_HOST = os.environ.get('DATABASE_HOST')
+import dj_database_url
 
 
-# Stripe
-BUNDLE_DISCOUNT_THRESHOLD = 19.99
-STRIPE_CURRENCY = 'gbp'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
-STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+if 'USE_AWS' in os.environ:
+    AWS_STORAGE_BUCKET_NAME = 'ms4-lettering-design-e-shop'
+    AWS_S3_REGION_NAME = 'EU (London) eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -39,10 +33,9 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 SECRET_KEY = 'd*mwv+8mla!+u^kze0!o3l#qlfjd(%z&!-=svuhzqwy!m8)8rw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEPLOYMENT == 'local'
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['ms4-lettering-design-e-shop.herokuapp.com', 
-                '8000-ed10b46b-d3de-49a6-a1c9-14a86b9f1415.ws-eu03.gitpod.io',
                 'localhost']
 
 
@@ -68,6 +61,7 @@ INSTALLED_APPS = [
 
     # other
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -137,20 +131,18 @@ WSGI_APPLICATION = 'word4u.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-ENGINE = 'django.db.backends.sqlite3'
 
-if DEPLOYMENT == 'heroku':
-    ENGINE = 'django.db.backends.postgresql'
-
-DATABASES = {
-    'default': {
-        'ENGINE': ENGINE,
-        'NAME': DATABASE_NAME,
-        'USER': DATABASE_USER,
-        'PASSWORD': DATABASE_PASSWORD,
-        'HOST': DATABASE_HOST,
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
@@ -194,3 +186,10 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Stripe
+BUNDLE_DISCOUNT_THRESHOLD = 49.99
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')

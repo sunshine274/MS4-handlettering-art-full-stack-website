@@ -12,7 +12,6 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .jumbotron {
-  background-image: url("/media/jumbotron-bg.jpg");
   background-size: cover;
 }
 
