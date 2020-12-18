@@ -11,3 +11,8 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+class Testimony(models.Model):
+    created = models.DateTimeField(auto_now_add=True,)
+    text = models.TextField()
+    product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
