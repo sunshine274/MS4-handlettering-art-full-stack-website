@@ -6,8 +6,7 @@ html {
 }
 
 body {
-
-    color: #555;
+color: #555;
 font-family: 'Montserrat', sans-serif;
 }
 
@@ -30,14 +29,12 @@ font-family: 'Montserrat', sans-serif;
     font-family: 'Montserrat', sans-serif;
 }
 
-.main-logo-link {
-    width: fit-content;
+.text-theme {
+    color: #8ac0b2;
 }
 
-.shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
+.main-logo-link {
+    width: fit-content;
 }
 
 .btn-black {
@@ -47,7 +44,7 @@ font-family: 'Montserrat', sans-serif;
 
 .btn-outline-black {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
+    color: #555 !important; 
     border: 1px solid black;
 }
 
@@ -81,7 +78,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .bg-theme {
-    background: #69c2a9;
+    background: #9bbcb3;
 }
 
 .btt-button {
