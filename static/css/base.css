@@ -177,6 +177,9 @@ input[name='q']::placeholder {
 }
 
 /* Allauth form formatting */
+.allauth-form-inner-content {
+    height: 72vh;
+}
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
@@ -228,6 +231,10 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
+}
+
+.product-details-container {
+    height: 72vh;
 }
 
 footer {
