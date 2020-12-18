@@ -25,9 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-# 'DEVELOPMENT' in os.environ
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['ms4-lettering-design-e-shop.herokuapp.com', 
                 'localhost']
@@ -124,18 +122,23 @@ WSGI_APPLICATION = 'word4u.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+DATABASES = {
+     'default': dj_database_url.parse('postgres://dyslvbwnffagoz:703b6adf11ae36564b9c591841051378c56cbabff2167e02d406f4b62809ab48@ec2-52-212-157-46.eu-west-1.compute.amazonaws.com:5432/d391hjkqct72a')
+ }
 
+
+# if 'DATABASE_URL' in os.environ:
+#     DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
+# 
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -180,6 +183,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
+
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 01 Jan 2099 23:00:00 GMT',
+        'CacheControl': 'max-age=9999999',
+    }
+
     AWS_STORAGE_BUCKET_NAME = 'ms4-lettering-design-e-shop'
     AWS_S3_REGION_NAME = 'EU (London) eu-west-2'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')

@@ -43,11 +43,9 @@ This is my full-stack e-commerce website built while studying Django under extre
 # User Experience (UX)
 ## Goals
 ### Site user Goals
+- Browse products and view details
 - easily register for an account
 - easily login or logout
-- easily recover my password in case I forget it
-- receive and email confirmation after registering
-- have a personalised user profile
 ### Shopper Goals
 - View a list of products
 - View an individual product details
@@ -76,10 +74,17 @@ As a site visitor of WORD4U, I expect/need/want to:
 - verify that my account registration was successful
 ### Shopper Stories
 As a shopper of WORD4U, I expect/need/want to:
-
+- define the color and content of the product
+- avoid exceeding my budget
+- ensure I receive my ideal personalisation
+- identify the order and cost details before checkout,
+- checkout smoothly
+- confidently provide info to make a purchase
+- to be able to verify the final order details
+- keep the confirmation for my records
 
 
 
 
 # Media
-- <span>Homepage Photo by <a href="https://unsplash.com/@iamfelicia?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Felicia Buitenwerf</a> on <a href="https://unsplash.com/s/photos/quotes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+- 
