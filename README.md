@@ -1,8 +1,8 @@
 <h1 align="center">MS4-Lettering Graphic Design E-shop</h1>
 
-[View the live project here.](https://net)
+[View the live project here.](https://ms4-lettering-design-e-shop.herokuapp.com)
 
-This is my full-stack e-commerce website built while studying Django under extremely tight deadline and 
+This is my full-stack e-commerce website built while studying Django under extremely tight deadline and I will keep on working on it after the submission deadline.
 
 <h2 align="center"><img src=""></h2>
 
