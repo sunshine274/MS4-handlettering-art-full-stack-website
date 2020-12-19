@@ -311,7 +311,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 ### Existing Problems
 - App responsiveness Problems on mobile devices including iphone8 plus etc.
     - shopping bag page not shown properly hence unable to checkout on mobile
-- Code not fully tidied up throughout
+    - given more time, should add responsiveness to shopping bag table etc.
 - Typos in webpage contents
 
 ### Languages
