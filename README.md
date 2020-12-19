@@ -306,6 +306,11 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
     - change product price, description, images and other product criteria
     - remove products if needed
 
+### Existing Problems
+- App responsiveness Problems on mobile devices including iphone8 plus etc.
+- Code not fully tidied up throughout
+- Typos in webpage contents
+
 ### Languages
 - This project uses HTML, CSS, JavaScript and Python programming languages.
 
