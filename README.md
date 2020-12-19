@@ -120,7 +120,9 @@ The wireframes were created using app downloaded from [Balsamiq](https://balsami
 - testimonies from customers can be added to homepage, and only the latest three testimonies will be shown
 
 ## Features to be developed
-- a contact page for cusomers/site visitors to contact the business
+- a Contact page for cusomers/site visitors to contact the business
+- an About page should be added to provide business information to increase credibility
+- a Freebies page can be added for visitors to download some free universal designs e.g. Christmas card etc.
 
 ## Schema Design
  The schema includes these main sections/models:
@@ -308,6 +310,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ### Existing Problems
 - App responsiveness Problems on mobile devices including iphone8 plus etc.
+    - shopping bag page not shown properly hence unable to checkout on mobile
 - Code not fully tidied up throughout
 - Typos in webpage contents
 

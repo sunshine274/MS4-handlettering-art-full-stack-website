@@ -234,7 +234,7 @@ input[name='q']::placeholder {
 }
 
 .product-details-container {
-    height: 72vh;
+    height: 80vh;
 }
 
 footer {
