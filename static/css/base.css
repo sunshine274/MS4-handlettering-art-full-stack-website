@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
 
+/* ------ base.html, allauth, and toasts elements styling from Boutique Ado project ----*/
+
 html {
     height: 100%;
 }
@@ -167,15 +169,6 @@ input[name='q']::placeholder {
 }
 
 
-/* -------------------------------- Media Queries */
-
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
-}
-
 /* Allauth form formatting */
 .allauth-form-inner-content {
     height: 72vh;
@@ -269,6 +262,16 @@ footer {
 .social-links li a i:hover {
   background: #6db9d9;
 }
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
