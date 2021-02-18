@@ -4,6 +4,13 @@
 
 This is my full-stack e-commerce website built while studying Django under extremely tight deadline and I will keep on working on it after the submission deadline.
 
+This website aims to sell handlettering design services to cutstomers, therefore it should be able to:
+1. add/delete/modify/display products
+2. allow new customers to register
+3. allow old customers to login and track former order information
+4. allow customers to customise their own preferred handlettering designs
+5. allow customers to securely checkout and make card payment
+
 <h2 align="center"><img src=""></h2>
 
 ## Table of Contents
